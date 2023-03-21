@@ -1,0 +1,74 @@
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.social-left {
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+    left: 20px;
+    right: auto;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    inline-size: 20px;
+}
+
+.social-icons::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 5px auto;
+    color: #006400;
+    border: solid 1px;
+}
+
+.social-icons img {
+    margin-top: 15px;
+}
+
+.social-right {
+    position: fixed;
+    bottom: 0px;
+    z-index: 10;
+    right: 20px;
+    left: auto;
+}
+
+.social-right ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.center-screen {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.f-size {
+    font-size: 23px;
+    font-family: monospace;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

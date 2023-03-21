@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}About | Gigil Jacob{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock css %}
+
+{% block body %}
+<main>
+    <div class="container">
+        <div class="row content-height">
+            <div class="col-12">
+                Who am I ?
+                <hr>
+            </div>
+        </div>
+        <div class="row mx-2">
+            <div class="col-6 pl-3 about-left">
+                I am a tech enthusiast who loves to play mostly with python and its frameworks
+            </div>
+            <div class="col-6 about-right">
+                A man who loves the aspects of technology and loves to solve problems, create something new.
+                Python is my favourate technology which I use to find solution to the probelms which I face.
+                Writing code in backend is like being anonymous yet it is a satisfying thing to do. One another
+                thing that my mentor taught me and still I practice is that where ever you are writing clean
+                and good code is an art. 
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 about-center-screen about-bottom">
+                <div class="about-image-width">
+                    <img src="{% static 'images/IMG_3421.jpg' %}" alt="" >
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}
+
+{% block js %}
+{% endblock js %}
