@@ -15,7 +15,7 @@ class HomeView(TemplateView):
     """
     template_name = "home/home.html"
 
-    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+    def get_context_data(self, **kwargs: any):
         context = super().get_context_data(**kwargs)
         context.update({"home": True})
         return context
@@ -30,12 +30,12 @@ class ContactMe(CreateView):
     template_name = "home/contact.html"
     success_url = reverse_lazy("home:contact")
 
-    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+    def get_context_data(self, **kwargs: any):
         context = super().get_context_data(**kwargs)
         context.update({"contact": True})
         return context
 
-    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+    def form_valid(self, form: BaseModelForm):
         messages.add_message(self.request, messages.SUCCESS, "Thank you, will check and respond soon.")
         return super().form_valid(form)
 
@@ -46,7 +46,7 @@ class AboutMe(TemplateView):
     """
     template_name = "home/about.html"
 
-    def get_context_data(self, **kwargs: any) -> dict[str, any]:
+    def get_context_data(self, **kwargs: any):
         context = super().get_context_data(**kwargs)
         context.update({"about": True})
         return context
