@@ -32,10 +32,10 @@
                             <a class="nav-link {% if home %}active{% endif %}" aria-current="page" href="{% url 'home:home' %}">01. Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if about %}active{% endif %}" href="{% url 'home:about' %}">02. About</a>
+                            <a class="nav-link disabled {% if about %}active{% endif %}" href="{% url 'home:about' %}">02. About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/experience">03. Experience</a>
+                            <a class="nav-link disabled" href="/experience">03. Experience</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if contact %}active{% endif %}" href="{% url 'home:contact' %}">04. Contact</a>
