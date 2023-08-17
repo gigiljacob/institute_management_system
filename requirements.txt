@@ -1,0 +1,20 @@
+ python-decouple==3.8
+
+# Django
+Django==4.2.3
+django-debug-toolbar==4.1.0
+
+# Django Rest Framework
+djangorestframework==3.14.0
+markdown==3.4.4
+django-filter==23.2
+coreapi==2.3.3
+pygments==2.15.1
+djangorestframework-simplejwt==5.2.2
+# djangorestframework-simplejwt[crypto]
+
+# Documentation
+# django-rest-swagger==2.2.0
+drf-yasg==1.21.7
+# drf-yasg[validation]
+

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}IMS | Profile{% endblock %}
+
+{% block content %}
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <p>
+        <a href="{% url 'institutes:create' %}">create institute</a>
+    </p>
+        <p>List institutes</p>
+    <ul>
+        {% for institute in institutes %}
+        <li>{{ institute.name }} | {{ institute.address }} | total users: 2 | active users: 2 |
+            <a href="{% url 'institutes:manage' institute.identifier %}">Manage</a></li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

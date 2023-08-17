@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'tailwind.html' %}
+    {% block css %}{% endblock %}
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+    <!-- Navbar -->
+    <p>
+        <a href="{% url 'accounts:profile' %}">Profile</a>
+        | <a href="{% url 'accounts:logout' %}">Logout</a>
+        | logged in as {{ user }}
+    </p>
+
+{% block content %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+</body>
+</html>
