@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block body %}
+  <main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Get in touch with me...</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>RPRA 10, RadhaOil Mill Road, Pachalam - 682 012</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>gigiljacob93@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 79079 91562</p>
+              </div>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.57564885264264!2d76.28060854134783!3d9.99947347119572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d6669ab581f%3A0x416ae268e0c9fa01!2sRPRA-10%2C%20Pachalam%2C%20Kochi%2C%20Ernakulam%2C%20Kerala%20682018!5e0!3m2!1sen!2sin!4v1694757596699!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form method="post" role="form" class="php-email-form" novalidate>
+              {% csrf_token %}
+              <div class="row">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <ol{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</ol>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="form-group col-md-6">
+                  <label for="name">{{ form.name.label }}</label>
+                  {% render_field form.name class="form-control" id="name" %}
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">{{ form.email.label }}</label>
+                  {% render_field form.email class="form-control" id="email" %}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">{{ form.subject.label }}</label>
+                {% render_field form.subject class="form-control" id="subject" %}
+              </div>
+              <div class="form-group">
+                <label for="name">{{ form.message.label }}</label>
+                {% render_field form.message class="form-control" id="message" %}
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+  </main>
+{% endblock %}

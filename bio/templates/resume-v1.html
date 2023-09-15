@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+  <main id="main">
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>Experienced Python Developer with over 5+ years of hands-on expertise in designing, developing,
+            and deploying robust web applications using Django. A dedicated and passionate programmer with a
+            strong commitment to writing clean, efficient, and maintainable code. Proven track record of delivering
+            high-quality software solutions within project timelines. Aiming to further excel and contribute
+            as a Python expert, aspiring to become a distinguished "pythoneer" in the software
+            development community.</p>
+        </div>
+
+        <div class="row">
+          <div class="col" data-aos="fade-up">
+            <embed src="{% static 'docs/resume-general.pdf' %}" type="application/pdf" width="100%" height="600px"/>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+  </main>
+{% endblock %}
