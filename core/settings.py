@@ -127,3 +127,9 @@ STATIC_ROOT = '/var/www/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from core.environment_config import *
+except ImportError:
+    print("Missing environment config file!")
+    exit()
