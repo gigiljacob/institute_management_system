@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'widget_tweaks',
+
     # Documentation
     'drf_yasg',
     # 'rest_framework_swagger',
@@ -55,6 +57,7 @@ INSTALLED_APPS = [
     # Custom Apps
     'accounts',
     'institutes',
+    'employees',
     'master',
 ]
 
