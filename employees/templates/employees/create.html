@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}IMS | Manage Institute{% endblock %}
+
+{% block content %}
+<p>Enter Employee Details</p>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create">
+</form>
+
+{% endblock %}
