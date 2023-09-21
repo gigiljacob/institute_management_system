@@ -1,26 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
+{% load static %}
+{% load widget_tweaks %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>IMS | Login</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script type="module" crossorigin src="{% static 'assets/index-9b75e76f.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'assets/index-769d8337.css' %}">
+  </head>
+  <body>
 
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+<!-- login form start-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 pt-5 mt-lg-5">
 
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Login">
-      <a href="{% url 'accounts:register' %}">Register</a>
-      <a href="{% url 'accounts:change_password' %}">Forgot password</a>
-    </form>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title logo">EIMS</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Educational institutional management system</h6>
+              <hr>
+              {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+              {% endif %}
+              {{ form.errors }}
+              <!-- form start  -->
+              <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="email">{{ form.username.label }}</label>
+                  {% render_field form.username class="form-control px-3" id="email" aria-describedby="email" placeholder="Enter email" %}
+                </div>
+                <div class="form-group">
+                  <label for="password">{{ form.password.label }}</label>
+                  {% render_field form.password class="form-control px-3" id="password" aria-describedby="password" placeholder="Enter password" %}
+                </div>
+                <input type="submit" value="Login" class="btn btn-primary px-5">
+                <p class="float-lg-right">Forgot password ? <a href="{% url 'accounts:change_password' %}">Click here.</a> </p>
+              </form>
+              <hr>
+              <span >Don't have an acount ?</span>
+              <a href="{% url 'accounts:register' %}" class="btn btn-outline-primary px-3  ml-3">Create new Account</a>
+              <!-- form end -->
+            </div>
+          </div>
 
-</body>
+        </div>
+      </div>
+    </div>
+    <!-- login form end -->
+  </body>
 </html>
+
+
