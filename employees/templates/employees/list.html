@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}IMS | Manage Institute{% endblock %}
+
+{% block content %}
+<a href="{% url 'employees:create' ins_identifier %}">Create Employee</a>
+<p>List Employees of this institute</p>
+<p>
+    <ul>
+        {% for employee in employees %}
+        <li>{{institute}}</li>
+        <li>emp2</li>
+        {% endfor %}
+    </ul>
+</p>
+
+{% endblock %}
