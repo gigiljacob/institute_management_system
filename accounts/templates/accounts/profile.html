@@ -3,22 +3,55 @@
 {% block title %}IMS | Profile{% endblock %}
 
 {% block content %}
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <p>
-        <a href="{% url 'institutes:create' %}">create institute</a>
-    </p>
-        <p>List institutes</p>
-    <ul>
-        {% for institute in institutes %}
-        <li>{{ institute.name }} | {{ institute.address }} | total users: 2 | active users: 2 |
-            <a href="{% url 'institutes:manage' institute.identifier %}">Manage</a></li>
 
+  <div class="container pt-3">
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="row">
+          <div class="col-md-12 pb-3">
+            <a href="{% url 'institutes:create' %}" class="btn btn-primary float-right"> Add Institution</a>
+          </div>
+        </div>
+
+        <!-- intituion card -->
+        {% for institute in institutes %}
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2">
+                <p class="pt-lg-5 text_weight_20">00{{ institute.id }}</p>
+              </div>
+              <div class="col-md-5">
+                <h4 class="card-title">{{ institute.name }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{ institute.address }}</h6>
+                <p class="card-text">{{ institute.objective }}</p>
+              </div>
+              <div class="col-md-3">
+                <p><b>TOTAL USERS:</b> ?</p>
+                <p><b>ACTIVE USERS:</b> ?</p>
+                <p><b>Status:</b> <span class="badge badge-success">Active</span></p>
+              </div>
+              <div class="col-md-2 pt-lg-5">
+                <a href="{% url 'institutes:manage' institute.identifier %}" class="btn btn-primary">Manage</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {% empty %}
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <h4 class="card-title">No institutes have been registered yet!</h4>
+              </div>
+            </div>
+          </div>
+        </div>
         {% endfor %}
-    </ul>
+      </div>
+    </div>
+  </div>
 {% endblock %}
