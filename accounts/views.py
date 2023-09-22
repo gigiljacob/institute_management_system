@@ -25,7 +25,7 @@ class ImsLoginView(LoginView):
     template_name = 'accounts/login.html'
 
     def get_success_url(self):
-        messages.success(self.request, f'Welcome back {self.request.user.email}')
+        # messages.success(self.request, f'Welcome back {self.request.user.email}')
         return reverse_lazy('accounts:profile')
 
 
@@ -37,5 +37,5 @@ class ResetPasswordView(PasswordResetView):
     template_name = 'accounts/password_reset.html'
 
     def get_success_url(self):
-        messages.success(self.request, 'Account created successfully')
+        # messages.success(self.request, 'Account created successfully')
         return reverse_lazy('accounts:login')
