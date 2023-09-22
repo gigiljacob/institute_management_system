@@ -9,7 +9,10 @@ from .managers import ImsUserManager
 class ImsUser(AbstractBaseUser, PermissionsMixin):
     username = None
 
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     email = models.EmailField(_("email address"), unique=True)
+    phone = models.CharField(verbose_name="Phone Number", max_length=13)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)

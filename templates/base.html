@@ -1,29 +1,25 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block meta %}{% endblock %}
-    <title>{% block title %}{% endblock %}</title>
-    {% include 'tailwind.html' %}
-    {% block css %}{% endblock %}
-    {% block head %}
-    {% endblock %}
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block meta %} {% endblock %}
+  <title>{% block title %} {% endblock %}</title>
+  {# include 'tailwind.html' #}
+  <script type="module" crossorigin src="{% static 'assets/index-9b75e76f.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'assets/index-769d8337.css' %}">
+  {% block css %} {% endblock %}
+  {% block head %} {% endblock %}
 </head>
 <body>
 
-    <!-- Navbar -->
-    <p>
-        <a href="{% url 'accounts:profile' %}">Profile</a>
-        | <a href="{% url 'accounts:logout' %}">Logout</a>
-        | logged in as {{ user }}
-    </p>
-    <hr/>
+  {% block content %}
+  {% endblock %}
 
-{% block content %}
-{% endblock %}
 
-{% block js %}
-{% endblock %}
+  {% block js %}
+  {% endblock %}
 </body>
 </html>

@@ -1,17 +1,11 @@
-<!doctype html>
+{% extends 'base.html' %}
 {% load static %}
 {% load widget_tweaks %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <script type="module" crossorigin src="{% static 'assets/index-9b75e76f.js' %}"></script>
-  <link rel="stylesheet" href="{% static 'assets/index-769d8337.css' %}">
-  </head>
-  <body>
+{% block title %}Login{% endblock %}
+{% block js %} {% endblock %}
+{% block css %} {% endblock %}
 
+{% block content %}
 <!-- login form start-->
     <div class="container">
       <div class="row">
@@ -55,7 +49,5 @@
       </div>
     </div>
     <!-- login form end -->
-  </body>
-</html>
-
+{% endblock %}
 

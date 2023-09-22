@@ -1,16 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>IMS | Register</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}Login{% endblock %}
+{% block js %} {% endblock %}
+{% block css %} {% endblock %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register">
-    </form>
+{% block content %}
 
-</body>
-</html>
+  <!-- register form start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 pt-5 mt-lg-5">
+
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title logo">EIMS</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Educational institutional management system</h6>
+              <hr>
+              <!-- form start  -->
+              <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">{{ form.first_name.label }}</label>
+                    {% render_field form.first_name class="form-control px-3" id="email" aria-describedby="email" placeholder="First Name" %}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">{{ form.last_name.label }}</label>
+                    {% render_field form.last_name class="form-control px-3" id="email" aria-describedby="email" placeholder="Last Name" %}
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">{{ form.email.label }}</label>
+                    {% render_field form.email class="form-control px-3" id="email" aria-describedby="email" placeholder="Enter Email" %}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email">{{ form.phone.label }}</label>
+                    {% render_field form.phone class="form-control px-3" id="email" aria-describedby="email" placeholder="Phone Number" %}
+                  </div>
+                </div>
+              </div>
+                <div class="form-group">
+                  <label for="password">{{ form.password1.label }}</label>
+                  {% render_field form.password1 class="form-control px-3" id="password" aria-describedby="password" placeholder="Enter Password" %}
+                </div>
+                <div class="form-group">
+                  <label for="password">{{ form.password2.label }}</label>
+                  {% render_field form.password1 class="form-control px-3" id="password" aria-describedby="password" placeholder="Confirm Password" %}
+                </div>
+                <p>By clicking below button you are agreen to the terms and conditions.</p>
+                <input type="submit" value="Register" class="btn btn-primary px-5">
+
+
+              </form>
+              <hr>
+
+              <p class="text-center">Already have an acount ? <a href="{% url 'accounts:login' %}" class="px-2 ml-3">Login</a></p>
+
+
+              <!-- form end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- register end -->
+
+{% endblock %}
